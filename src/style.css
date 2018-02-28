@@ -1,0 +1,169 @@
+body{
+    margin:0 auto;
+    align-content: center;
+    padding: 100px;
+    background: black;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+}
+.parent div{            
+    transform-style: preserve-3d;
+}
+.parent{
+    perspective: 1000px;
+    perspective-origin: -24% 4%;
+    position: relative;
+}
+.child{
+    border: 1px solid red;
+    position: absolute;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    /* transform: translate3d(-83px,41px,490px) rotateY(44deg) rotateZ(-23deg) rotateX(-3deg); */
+}
+.tin{
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    outline: 1px solid rgba(100,100,255,0.2);
+    width: 100px;
+    height: 100px;
+}
+.left{
+    width: 200px;
+    transform-origin: left;
+    transform: rotateY(-90deg);
+}
+.right{
+    width: 200px;
+    transform: rotateY(90deg) translate3d(-100px,0px,0px);
+}
+.top{
+    height: 200px;
+    transform-origin: top;
+    transform: rotateX(90deg);
+}
+.bottom{
+    height: 200px;
+    transform: rotateX(90deg) translate3d(0px,100px,0px)
+}
+.front{
+    transform: translate3d(0px,0px,200px)
+}
+.base{
+    position: relative;
+    top:100px;
+}
+.base-tin{
+    /* background: rgba(165,42,42,1); */
+    background: url('wood.jpg');
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    height:20px;
+    /* outline: 1px solid white; */
+}
+.base-front{
+    transform: translate3d(0,0,200px);
+}
+.base-left{
+    transform-origin: left;         
+    transform: rotateY(-90deg);
+    width:200px;
+}
+.base-right{
+    width:200px;            
+    transform: translate3d(0,0,100px) rotateY(90deg);
+}
+.base-top{
+    transform-origin: bottom;            
+    height: 200px;
+    transform: rotateX(-90deg);
+}
+.base-bottom{           
+    height: 200px;
+    transform: rotateX(-90deg) translate3d(0,-100px,80px);
+}
+.base-front{
+    transform: translate3d(0,0,200px);
+}
+.short-hood{
+    left: 10px;
+    position: absolute;
+}
+.short-hood-tin{            
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    outline: 1px solid rgba(255,255,255,0.5);
+    background: rgba(255,0,0,0.3);
+}
+.short-hood-front{
+    transform: translate3d(0,0,50px);
+}
+.short-hood-back{
+    transform: translate3d(0,0,10px);
+}
+.short-hood-left{
+    width: 40px;
+    transform-origin: left;
+    transform: rotateY(-90deg) translate3d(10px,0,0px);
+}
+.short-hood-right{
+    width: 40px;
+    transform-origin: right;
+    transform: rotateY(90deg) translate3d(-10px,0px,40px);
+}
+.short-hood-top{
+    transform-origin: top;
+    height: 40px;
+    transform: rotateX(90deg) translate3d(0px,10px,0px);
+}
+.short-hood-bottom{
+    transform-origin: top;
+    height: 40px;
+    transform: rotateX(90deg) translate3d(0px,10px,-80px);
+}
+.controls{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #fff;
+    opacity: 0.1;
+}
+.controls:hover{
+    opacity: 1;
+}
+.controls .layer{
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.05);
+    margin-bottom: 5px;
+}
+.layer::after{
+    content: '';
+    clear: both;
+    display: block;
+}
+.layer>div{
+    float: left;
+    width: 40px;
+    line-height: 40px;
+    height: 40px;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.clear{
+    clear: both;
+}
+.minus{
+    border-right: 1px solid #333;
+    cursor: pointer;
+}
+.plus{
+    border-left: 1px solid #333;
+    cursor: pointer;
+}

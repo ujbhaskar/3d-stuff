@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0 auto;
+            align-content: center;
+            padding: 100px;
+            background: black;
+            width: 100%;
+            text-align: center;
+            height: 100%;
+        }
+        .parent{
+            perspective: 1000px;
+            perspective-origin: -24% 4%;
+            position: relative;
+        }
+        .child{
+            position: absolute;
+            transform: translate3d(-83px,41px,490px) rotateY(10deg) rotateZ(-6deg) rotateX(-6deg);
+            transform-style: preserve-3d;
+        }
+        .tin{
+            position: absolute;
+            background: rgba(100, 200, 255, 0.5);
+            border: 1px solid blue;
+            width: 100px;
+            height: 100px;
+        }
+        .left{
+            transform-origin: left;
+            transform: rotateY(-90deg);
+        }
+        .right{
+            transform-origin: right;
+            transform: rotateY(90deg);
+        }
+        .top{
+            transform-origin: top;
+            transform: rotateX(90deg);
+        }
+        .bottom{
+            transform-origin: bottom;
+            transform: rotateX(-90deg);
+        }
+        .front{
+            transform: translate3d(0px,0px,100px)
+        }
+
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">
+            <div class="tin front"></div>
+            <div class="tin back"></div>
+            <div class="tin left"></div>
+            <div class="tin right"></div>
+            <div class="tin top"></div>
+            <div class="tin bottom"></div>
+            <div class="base">
+                <div class="base-tin base-front"></div>
+                <div class="base-tin base-back"></div>
+                <div class="base-tin base-left"></div>
+                <div class="base-tin base-right"></div>
+                <div class="base-tin base-top"></div>
+                <div class="base-tin base-bottom"></div>
+            </div>
+            <div class="short-hood"></div>
+            <div class="cabin"></div>
+            <div class="long-hood"></div>
+        </div>
+    </div>
+</body>
+</html>
